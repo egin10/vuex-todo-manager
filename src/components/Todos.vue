@@ -18,7 +18,7 @@
         class="todo"
         v-bind:class="{'is-complete':todo.completed}"
       >
-        {{ todo.title }}
+        <p class="noselect">{{ todo.title }}</p>
         <i @click="deleteTodo(todo.id)" class="fa fa-trash-o" aria-hidden="true"></i>
       </div>
     </div>
@@ -97,6 +97,15 @@ i {
 .is-complete {
   background: #35495e;
   color: #fff;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 
 @media (max-width: 500px) {
